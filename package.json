@@ -1,0 +1,14 @@
+{
+  "name": "steam_prices",
+  "version": "1.8.2",
+  "description": "Changes prices from tenge to rubles, taking into account the commission.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DeusPerpetuum",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/DeusPerpetuum/SteamDB-prices-rub-extension"
+  }
+}

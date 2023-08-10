@@ -1,0 +1,19 @@
+label {
+    color: #f6f4e6;
+}
+
+body {
+    background-color: #282b30;
+}
+
+input {
+    background-color: #282b30;
+    color: #f6f4e6;
+    border-radius: 1px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

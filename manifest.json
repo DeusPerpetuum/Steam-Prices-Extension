@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Prices",
+  "version": "1.8.2",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://steamdb.info/app/*"],
+      "js": ["scripts/steamdb_integration.js"]
+    },
+    {
+      "matches": ["https://store.steampowered.com/*"],
+      "js": ["scripts/steam_integration.js"]
+    }
+  ],
+  "description": "__MSG_extensionDescription__",
+  "icons": {
+    "128": "icon.png"
+  },
+  "default_locale": "en",
+  "content_security_policy": {
+    "script-src": "self",
+    "object-src": "self"
+ }
+}

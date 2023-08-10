@@ -1,0 +1,14 @@
+{
+	"extensionDescription":{
+		"message": "Changes prices from tenge to rubles, taking into account the commission."
+	},
+	"percentLabel": {
+		"message": "Commission percent:"
+	},
+	"walletConvertLabel": {
+		"message": "Covert wallet:"
+	},
+	"debugLabel": {
+		"message": "Debug mode:"
+	}
+}

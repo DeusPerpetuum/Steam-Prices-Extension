@@ -1,0 +1,14 @@
+{
+	"extensionDescription":{
+		"message": "Изменяет цены с тенге на рубли, учитывая комиссию."
+	},
+	"percentLabel": {
+		"message": "Процент комиссии:"
+	},
+	"walletConvertLabel": {
+		"message": "Конвертировать кошелёк: "
+	},
+	"debugLabel": {
+		"message": "Debug mode:"
+	}
+}
