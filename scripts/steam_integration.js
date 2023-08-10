@@ -163,7 +163,7 @@ function init() {
             element.setAttribute("title", `${element.innerText}`);
             element.setAttribute("data-converted", 1);
 
-            if(Debug) DebugInfoCollector(Price, NewRUB, element, NormalizedText);
+            if(Debug) DebugInfoCollector(RUB, NewRUB, element, NormalizedText);
             ChangeText(element, NewRUB);
         }
     }
