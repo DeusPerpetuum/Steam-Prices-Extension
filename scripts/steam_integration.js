@@ -46,6 +46,11 @@ function init() {
         .item(0);
     ConvertPrice(SteamPriceElement);
 
+    let SteamSubscribePrices = document.querySelector('span[id^="add_to_cart_"]');
+    if(SteamSubscribePrices) {
+        ConvertPrice(SteamSubscribePrices)
+    }
+
     let SteamDiscountPrices = document.querySelectorAll(
         ".discount_final_price"
     );
@@ -114,18 +119,6 @@ function init() {
         }
     }
 
-    function ChangeText(element, NewPrice) {
-        if(element.innerText.includes("Цена для вас:") || element.innerText.includes("Your Price:")) {
-            if(element.innerText.includes("Цена для вас:")) {
-                element.innerHTML = `<div class="your_price_label">Цена для вас:</div><div>${NewPrice} ₽</div>`
-            } else {
-                element.innerHTML = `<div class="your_price_label">Your Price:</div><div>${NewPrice} ₽</div>`
-            }
-        } else {
-            element.innerText = `${NewPrice} ₽`;
-        }
-    }
-
     function DebugInfoCollector(Price, RUB, element, NormalizedText) {
         DebugInfo["Debug"].push({
             "Price": Price,
@@ -155,8 +148,16 @@ function init() {
             element.setAttribute("data-converted", 1);
 
             if(Debug) DebugInfoCollector(Price, RUB, element, NormalizedText);
-            ChangeText(element, RUB)
-        } else if (NormalizedText.match("уб.")) {
+
+            if(element.innerText.includes("Цена для вас:") || element.innerText.includes("Your Price:")) {
+                element.innerHTML = `<div class="your_price_label">${chrome.i18n.getMessage('yourPrice')}</div><div>${RUB} ₽</div>`;
+            } else if(element.innerText.includes("Начальная цена:") || element.innerText.includes("Starting at")) {
+                element.innerText = `${chrome.i18n.getMessage('StartPrice')} ${RUB} ₽ / ${chrome.i18n.getMessage('month')}`;
+            } else {
+                element.innerText = `${RUB} ₽`;
+            }
+
+        } else if (element.innerText.match("руб.")) {
             let RUB = parseInt(NormalizedText);
             let NewRUB = Math.round(RUB * 0.01 * percent + RUB);
 
@@ -164,8 +165,16 @@ function init() {
             element.setAttribute("data-converted", 1);
 
             if(Debug) DebugInfoCollector(RUB, NewRUB, element, NormalizedText);
-            ChangeText(element, NewRUB);
+
+            if(element.innerText.includes("Цена для вас:") || element.innerText.includes("Your Price:")) {
+                element.innerHTML = `<div class="your_price_label">${chrome.i18n.getMessage('yourPrice')}</div><div>${NewRUB} ₽</div>`;
+            } else if(element.innerText.includes("Начальная цена:") || element.innerText.includes("Starting at")) {
+                element.innerText = `${chrome.i18n.getMessage('StartPrice')} ${NewRUB} ₽ / ${chrome.i18n.getMessage('month')}`;
+            } else {
+                element.innerText = `${NewRUB} ₽`;
+            }
         }
     }
+
     if(Debug) {console.log(DebugInfo)};
 }

@@ -1,5 +1,5 @@
 window.onload = async () => {
-  let percent;
+  let percent = 13;
 
   chrome.storage.local.get().then((result) => {
     percent = result.percent ? result.percent : percent;

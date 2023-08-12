@@ -1,6 +1,6 @@
 {
   "name": "steam_prices",
-  "version": "1.8.2",
+  "version": "1.8.4",
   "description": "Changes prices from tenge to rubles, taking into account the commission.",
   "main": "index.js",
   "scripts": {

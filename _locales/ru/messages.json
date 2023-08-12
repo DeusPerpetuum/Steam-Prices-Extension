@@ -10,5 +10,14 @@
 	},
 	"debugLabel": {
 		"message": "Debug mode:"
+	},
+	"yourPrice": {
+		"message": "Цена для вас:"
+	},
+	"month": {
+		"message": "мес."
+	},
+	"StartPrice": {
+		"message": "Начальная цена:"
 	}
 }

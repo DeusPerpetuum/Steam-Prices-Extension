@@ -10,5 +10,14 @@
 	},
 	"debugLabel": {
 		"message": "Debug mode:"
+	},
+	"yourPrice": {
+		"message": "Your Price:"
+	},
+	"month": {
+		"message": "month"
+	},
+	"StartPrice": {
+		"message": "Starting at"
 	}
 }
