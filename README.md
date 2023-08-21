@@ -1,5 +1,6 @@
 # About
 Changes prices from tenge to rubles, taking into account the commission.
+Takes the tenge exchange rate from the central bank of Russia.
 
 ## Installing
 Drag and drop into browser.
