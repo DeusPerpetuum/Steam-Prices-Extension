@@ -19,5 +19,8 @@
 	},
 	"StartPrice": {
 		"message": "Начальная цена:"
+	},
+	"update_to": {
+		"message": "обновить до"
 	}
 }

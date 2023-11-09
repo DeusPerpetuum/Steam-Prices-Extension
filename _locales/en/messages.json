@@ -19,5 +19,8 @@
 	},
 	"StartPrice": {
 		"message": "Starting at"
+	},
+	"update_to": {
+		"message": "update to"
 	}
 }

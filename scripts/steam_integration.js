@@ -134,7 +134,6 @@ function init() {
         if(element.getAttribute('data-converted') === "1") return;
 
         let NormalizedText = String(element.innerText).replace(/\s/g, "").replace(/[^0-9,\u0440\u0443\u0431.\u20A0-\u20CF]/g,"");
-        console.log(NormalizedText);
         if (!/\d/g.test(NormalizedText)) return;
         
         if (NormalizedText.includes("₸")) {
